@@ -1,6 +1,7 @@
 from flask import Flask, redirect, render_template
 import sqlite3
 from datetime import date
+from waitress import serve
 
 app = Flask(__name__)
 
@@ -73,5 +74,4 @@ def water():
 
 
 if __name__ == "__main__":
-    init_db()
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    serve(app, host="0.0.0.0", port=5000)
