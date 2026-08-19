@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ガジュマル水やり管理</title>
+</head>
+
+<body>
+
+    <h1>🌳 ガジュマル水やり管理</h1>
+
+    <h2>最後の水やり</h2>
+    <p>{{ last_watered }}</p>
+
+    {% if days_since is not none %}
+        <p>水やりから {{ days_since }} 日</p>
+    {% endif %}
+
+    <form action="/water" method="post">
+        <button type="submit">💧 水やり完了</button>
+    </form>
+
+</body>
+</html>
